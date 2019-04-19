@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8>
+<title>無標題文件</title>
+
+
+<style>
+div{
+	border:#9C0 solid thin;
+	border-radius: 5px;
+	text-align:center;
+}
+</style>
+</head>
+
+<body>
+<div id="divGreeting">GOOD morning</div>
+<div id="divGreeting2">GOOD afternoon</div>
+<div id="divLcuky">Lcuky Number</div>
+<!--<button id="btnStop" onClick="stoprandom();" style="display:none; width:100% height:50px">Stop</button>-->
+<button id="btnStop" style="display:none; width:100% height:50px">Stop</button>
+<script>
+	var tmp=document.getElementById('divGreeting');
+	var tmp2=document.getElementById('divGreeting2');
+	var tmp3=document.getElementById('divLcuky');
+	var tmp4=document.getElementById('btnStop');
+
+	tmp.onclick=function(){
+	alert( "早安!");
+	};
+	
+	tmp.onmousemove=function(){
+		changecolor(this);
+		this.innerHTML="歐嗨唷";
+	};
+	tmp.onmouseout=function(){
+		cleancolor(this);
+		this.innerHTML="GOOD morning!";
+		};
+	function changecolor(obj){
+		obj.style.cursor="pointer";
+		obj.style.backgroundColor="#C3C";
+	}
+	function cleancolor(obj){
+		obj.style.backgroundColor="inherit";
+	}
+
+	tmp2.addEventListener('click',sayGreetin);
+	tmp2.addEventListener('mouseover',function(){
+										changecolor(this);
+										this.innerHTML="摳泥";
+											   });
+	tmp2.addEventListener('mouseout',function(){
+										cleancolor(this);
+										this.innerHTML="GOOD afternoon";
+											   });
+	function sayGreetin(){
+			alert( "午安!");
+			};
+			
+	
+	tmp3.addEventListener('mouseover',function(){
+		this.style.width="100%";
+		this.style.height="50vh";
+		this.style.fontSize="36px";
+		this.style.borderStyle="dotted";
+		this.style.borderWidth="10px";
+		tmp4.style.display="inherit";
+											   });
+	tmp3.addEventListener('mousemove',generalnumber);
+	function generalnumber(){
+		tmp3.innerHTML=(Math.ceil(Math.random()*45));
+				};
+	tmp4.addEventListener('click',stoprandom);
+	function stoprandom(){
+		tmp3.removeEventListener('mousemove',generalnumber);
+		};
+	
+</script>
+</body>
+</html>

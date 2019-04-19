@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8>
+<title>無標題文件</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<style>
+
+</style>
+<script>
+$(document).ready(function(){
+	$("#btnGet").click(function(){							
+		$.get("0107page8_get.php",{id1:$("#txtName").val(),id2:$("#txtAge").val()},function(data,status){
+			$("#divGet").html("傳回的內容:<br>"+data+"<br>"+"傳回的狀態:"+status);
+		});
+	});
+});
+</script>
+</head>
+
+<body>
+<input type="text" id="txtName">
+<input type="text" id="txtAge">
+<div id="divGet">Get測試</div><br>
+<button id="btnGet">GET</button>
+</body>
+</html>

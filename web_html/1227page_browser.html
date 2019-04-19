@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8>
+<title>無標題文件</title>
+
+</head>
+
+<body>
+
+<div id="demo1">demo1</div>
+<div id="demo2">demo2</div>
+<div id="demo3">demo3</div>
+<div id="demo4"></div>
+<div id="demo5"></div>
+<div id="demo6"></div>
+<div id="demo7"></div>
+
+<script>
+	document.getElementById('demo1').innerHTML=window.navigator.appName;
+	document.getElementById('demo2').innerHTML=window.navigator.appCodeName;
+	document.getElementById('demo3').innerHTML=window.navigator.appVersion;
+	document.getElementById('demo4').innerHTML=window.navigator.platform; 
+	document.getElementById('demo5').innerHTML=window.navigator.product;
+	document.getElementById('demo6').innerHTML=window.navigator.userAgent;
+	document.getElementById('demo7').innerHTML=window.navigator.cookieEnabled;
+	var tmp=window.navigator.cookieEnabled;
+	
+	if (tmp){
+	document.write("瀏覽器支援cookie");
+	}
+	else{
+		document.write("請開啟cookie");
+		}
+</script>
+</body>
+</html>

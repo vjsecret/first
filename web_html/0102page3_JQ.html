@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8>
+<title>無標題文件</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<script>
+$(document).ready(function(){
+	$("#btnP").hide();
+	
+	$("p").click(function(){
+		//$("p").hide();
+		$(this).hide();
+		$("#btnP").show();
+		});
+	$("#btnP").click(function(){
+			$("p").show();
+			$("#btnP").hide();
+		});
+	
+	$("#divCoffee ul li").click(function(){
+		$(this).hide();
+		});
+	$("#divCoffee h3").click(function(){
+		$("#divCoffee ul li").show();
+		});	
+});
+
+</script>
+<body>
+<p>welcome to cofe time</p>
+<p>咖啡的歷史起源</p>
+<p>咖啡的來源已無從稽考。諸多傳說之一指咖啡原產於衣索比亞（Ethiopia）西南部的咖法省高原地區，據說是一位牧羊人發現羊吃了一種植物後，變得非常興奮活潑，因此發現了咖啡。也有說法是由於一場野火，燒毀了一片咖啡林，燒烤咖啡的香味引起周圍居民的注意。人民最初咀嚼這種植物果實以提神，後來烘烤磨碎摻入麵粉做成麵包，作為勇士的食物，以提高作戰的勇氣。</p>
+<button id="btnP">顯示所有段落</button>
+<div id="divCoffee">
+<h3>處處咖啡香</h3>
+<ul>
+<li>咖啡的歷史起源</li>
+<li>咖啡樹的品種</li>
+<li>咖啡的栽培條件</li>
+<li>咖啡豆的成分</li>
+<li>咖啡豆的加工</li>
+<li>咖啡的沖煮方式</li>
+</ul>
+</div>
+</body>
+</html>

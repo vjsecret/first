@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8>
+<title>無標題文件</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+	$("#demo li").hover(function(){
+		$(this).append("<img src='images/jspic/on.gif' id='light'>");
+		$(this).css("background-color","#98F898");
+	},
+	function(){
+		$(this).find("#light:last").remove();
+		$(this).css("background-color","inherit");
+	});
+
+});
+
+</script>
+<style>
+#demo li{
+	list-style-type:none;
+}
+#demo img{
+	width:1%;
+}
+</style>
+</head>
+
+<body>
+<div id="demo">
+<h3>處處咖啡香</h3>
+<ul>
+<li>咖啡的歷史起源</li>
+<li>咖啡樹的品種</li>
+<li>咖啡的栽培條件</li>
+<li>咖啡豆的成分</li>
+<li>咖啡豆的加工</li>
+<li>咖啡的沖煮方式</li>
+</ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8>
+<title>無標題文件</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<style>
+
+</style>
+<script>
+$(document).ready(function(){
+	$("#btnPost").click(function(){							
+		$.post("0108page_post.php",{id1:$("#txtName").val(),id2:$("#txtAge").val(),id3:$("#txtGender").val()},function(data,status){	//$.post("0108page_post.php",{id1:$("#txtName").val(),id2:$("#txtAge").val(),id3:$("#seleGender").val()},function(data,status){
+			$("#divPost").html("傳回的內容:<br>"+data+"<br>"+"傳回的狀態:"+status);
+		});
+	});
+});
+</script>
+</head>
+
+<body>
+<input type="text" id="txtName" placeholder="請輸入您的大名"><br>
+<input type="text" id="txtAge" placeholder="請輸入您的年齡"><br>
+<input list="listGender" id="txtGender" placeholder="請輸入您的性別">
+    <datalist id="listGender">
+        <option value="man">男
+        <option value="fe">女
+    </datalist>
+<!--<select id="seleGender">
+	<option value="0">性別
+    <option value="man">男
+    <option value="fe">女
+</select>-->
+<div id="divPost">Post測試</div><br>
+<button id="btnPost">Post</button>
+</body>
+</html>

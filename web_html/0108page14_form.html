@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8>
+<title>無標題文件</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script>
+$(document).ready(function(){
+	$("#formSearch").submit(function(e){
+		var $f=$("#formSearch");
+		var $mySearch=$f.find("input[name='test1']").val();
+		var $url=$f.attr("action");
+		
+		//$("#divSearch").empty().append();
+		$("#divSearch").append(":" + $url + "?test1="+ $mySearch);
+		//e.preventDefault();
+	});
+});
+</script>
+</head>
+
+<body>
+<form action="0108page15_form.html" id="formSearch">
+<input type="text" name="test1" placeholder="輸入要搜尋之關鍵字"><br>
+<input type="submit" value="Search"><br>
+</form>
+
+<div id="divSearch">顯示結果</div>
+</body>
+</html>

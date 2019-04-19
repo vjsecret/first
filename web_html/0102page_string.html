@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8>
+<title>無標題文件</title>
+<script src="0102string.js"></script>
+</head>
+
+<body>
+<p id="pslogan">I love javascript and python and HTML and CSS.</p>
+<div id="demo"></div>
+<hr>
+<button id="btnLength">顯示字串長度</button>
+<button id="btnstrIndex">搜尋「love」由第幾個字元開始</button>
+<button id="btnSplit">Split</button>
+<button id="btnTypeWord">slogan打字效果</button><br>
+<img id="imgLight" src="images/jspic/off.gif">
+<script>
+	var pslogan=document.getElementById('pslogan');
+	var demo=document.getElementById('demo');
+	var btnLength=document.getElementById('btnLength');
+	var btnstrIndex=document.getElementById('btnstrIndex');
+	var btnstrIndex=document.getElementById('btnSplit');
+	var imgLight=document.getElementById('imgLight');
+	var btnTypeWord=document.getElementById('btnTypeWord');
+	
+	//demo.innerHTML=sloganLength(pslogan.innerHTML);
+	btnLength.addEventListener('click',function(){
+					   demo.innerHTML=sloganLength(pslogan.innerHTML);
+					   });
+	btnstrIndex.addEventListener('click',function(){
+					   demo.innerHTML=searchStr(pslogan.innerHTML,'love');
+					   });
+	btnSplit.addEventListener('click',function(){
+					   demo.innerHTML=spitWord(pslogan.innerHTML);
+					   });
+	imgLight.addEventListener('click',function(){
+					  //imgLight.src="images/jspic/on.gif";					  
+					  //imgLight.src="images/jspic/"+ changePicture(imgLight.src);
+					  	changePicture(this);					  
+					   });
+	var count=0;
+	btnTypeWord.addEventListener('click',function(){						
+						window.setInterval(function(){
+							typeWord(pslogan.innerHTML,demo)},500);			  
+					   });
+</script>
+</body>
+</html>

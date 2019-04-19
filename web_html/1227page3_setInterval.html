@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8>
+<title>無標題文件</title>
+
+</head>
+
+<body>
+
+<div id="demo"></div>
+<button id="demo2" onClick="window.setInterval(showCurrentTime,1000)">show Time Now</button>
+
+
+<script>
+function showCurrentTime(){	
+		var d=Date();
+		//document.getElementById('demo').innerHTML=Date();
+		document.getElementById('demo').innerHTML=d.toLocaleString();
+	}
+</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+<meta charset="utf-8">
+<title>無標題文件</title>
+</head>
+
+<body>
+<p id="showDate"></p>
+<p id="result"></p>
+    <script>
+		var n1=15,n2=1,n3=0;
+        var str='';
+		
+		var result=document.getElementById('result');
+		var showDate=document.getElementById('showDate');
+		var d =new Date();
+		showDate.innerHTML="現在時間與日期"+d.toLocaleString(); //將時間格式轉成本地時間
+		str="運算子說明: <BR>"
+		n3=n1+n2;
+		str=str + n1 + "+" + n2 + "=" + n3 + "<BR>";
+		n3=n1-n2;
+		str=str + n1 + "-" + n2 + "=" + n3 + "<BR>";
+		n3=n1*n2;
+		str=str + n1 + "*" + n2 + "=" + n3 + "<BR>";
+		n3=n1%n2;
+		str=str + n1 + "%" + n2 + "=" + n3 + "<BR>";
+
+		n1+=1;
+		str=str + "x=" + n1 + "<BR>";
+		n1++;
+		str=str + "x=" + n1 + "<BR>";
+		n1--;
+		str=str + "x=" + n1 + "<BR>";
+		++n1;
+		str=str + "x=" + n1 + "<BR>";
+		--n1;
+		str=str + "x=" + n1 + "<BR>";
+
+		str=str + "x++=" + n1++ + "<BR>";
+		str=str + "x=" + n1 + "<BR>";
+
+		result.innerHTML=str;
+    </script>
+
+</body>
+</html>

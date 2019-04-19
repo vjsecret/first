@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8>
+<title>無標題文件</title>
+<script>
+	function fun1(){
+		var sum=0;		
+		while (sum<0){
+				document.getElementById('W1').innerHTML="您執行了while";
+			}		
+	}
+	function fun2(){
+		var sum=0;		
+		do {
+				document.getElementById('W2').innerHTML="您執行了do while";
+			}while (sum<0);
+		
+	}
+</script>
+</head>
+
+<body>
+<button id="W1" onClick="fun1()">while</button><br>
+<button id="W2" onClick="fun2()">do...while</button>
+</body>
+</html>

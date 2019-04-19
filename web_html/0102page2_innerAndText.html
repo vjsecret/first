@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8>
+<title>無標題文件</title>
+<script src="0102string.js"></script>
+</head>
+
+<body>
+<h1 id="pslogan">innerHTML And innerText And TextContent</h1>
+<hr>
+<button id="innerHTML" onClick="setInnerHTML()">innerHTML</button>
+<button id="innerText" onClick="setInnerText()">innerText</button>
+<button id="TextContent" onClick="setTextContent()">TextContent</button>
+<div id="demo"></div>
+<div id="demo2">
+    這是一個div元素，包含了一個
+    <span style="display:none">隱藏的span元素</span>
+    和一個
+    <span>顯示的span元素</span></div>
+<script>
+	var demo=document.getElementById('demo');
+	var demo2=document.getElementById('demo2');
+	var innerHTML=document.getElementById('innerHTML');
+	var innerText=document.getElementById('innerText');
+	var TextContent=document.getElementById('TextContent');
+
+	function setInnerHTML(){
+			demo.innerHTML="<h3>您使用的是innerHTML</h3>";
+			alert(demo2.innerHTML);
+		}
+	function setInnerText(){
+			demo.innerText="<h3>您使用的是innerText</h3>";
+			alert(demo2.innerText);
+		}
+	function setTextContent(){
+			demo.textContent="<h3>您使用的是TextContent</h3>";
+			alert(demo2.textContent);
+		}
+</script>
+</body>
+</html>

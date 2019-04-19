@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<title>test decode URI</title>
+<script>
+	function decode(strURI){
+		var p=strURI.indexOf("?");
+		var pStr=strURI.substring(p+1);
+		var pStrArray=pStr.split("&");
+		
+		for (var i=0;i<pStrArray.length;i++){
+			document.write(pStrArray[i]+"<br>");
+		}
+
+		document.write("<hr>");
+
+		for (var i=0;i<pStrArray.length;i++){
+			var pair=pStrArray[i].split("=");
+			var key=decodeURIComponent(pair[0]);
+			var value=decodeURIComponent(pair[1]);
+			document.write(key+" -> "+value+"<br>");
+		}	
+		//document.write(strURI);		
+	}
+	
+	decode(window.location.href);
+	//alert(window.location.href);
+</script>
+</head>
+
+<body>
+<hr>
+welcome
+
+</body>
+</html>

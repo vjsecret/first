@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8>
+<title>無標題文件</title>
+<script>
+	var tmp=window.setInterval(showCurrentTime,1000);
+	var flag=false;
+	
+	function showCurrentTime(){	
+			var d=new Date();			
+			document.getElementById('demo').innerHTML=d.toLocaleString();
+	}
+	function stoptm(){		
+		if (flag==false){
+			window.clearInterval(tmp);
+			flag=true;
+		}else{
+			tmp=window.setInterval(showCurrentTime,1000);
+			flag=false;
+		}
+	}
+//	var flag=true;
+//	function stoptm(){	
+//	var tmp=window.setInterval(showCurrentTime,1000);
+//		if (flag==true){
+//			tmp=window.setInterval(showCurrentTime,1000);
+//			flag=false;
+//			console.log("false");
+//		}else{
+//			window.clearInterval(tmp);
+//			flag=true;	
+//			console.log("true");			
+//		}
+//	}
+</script>
+</head>
+
+<body>
+<button id="demo2" onClick="stoptm()">stop|start</button>
+<div id="demo"></div>
+</body>
+</html>

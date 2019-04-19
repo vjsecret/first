@@ -1,0 +1,4 @@
+<h1>Welcome to Salad Time</h1>
+<p>Green Salad</p>
+<p>Bound Salad</p>
+<p>Fruit Salad</p>

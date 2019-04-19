@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+<meta charset="utf-8">
+<title>無標題文件</title>
+</head>
+<script>
+	function bmi(){
+		var h=0, w=0,bmi=0;
+		h=document.getElementById('txtHeight').value;
+		w=
+		document.getElementById('txteight').value;
+		var result = document.getElementById('divResult');
+		
+		if (h!=0 && w!=0){
+			h=h/100;
+			bmi=w/(Math.pow(h,2));
+			result.innerHTML="身高:"+h+"公分<br>"+
+							 "體重:"+w+"公斤<br>"+
+							 "您的身體質量指數為:"+bmi.toFixed(1)+"<br>";
+			document.getElementById('txtHeight').value="";
+			document.getElementById('txteight').value="";
+		}
+		else{
+				result.innerHTML="請輸入您的身高和體重<br>";
+		}	
+	}
+</script>
+<body>
+<h3>請輸入您的體位資料:</h3>
+<input type="number" id="txtHeight" placeholder="請輸入您的身高(公分)"><br>
+<input type="number" id="txteight" placeholder="請輸入您的體重(公斤)"><br>
+<button id="btmOK" onclick=bmi()>OK</button>
+
+<div id="divResult">
+
+</div>	
+</body>
+</html>

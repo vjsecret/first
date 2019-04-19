@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="utf-8">
+<title>Cafe Time</title>
+
+<style>
+body{
+	text-align:center;
+}
+
+#dog{
+	border:#9C0 1px outset;
+	border-radius:50%;
+	padding:10px;	
+	box-shadow:3px 5px 3px rgba(125,125,125,0.5);
+}
+
+#demo{
+	font-size:24px;
+}
+
+#btn{
+	width:50%;
+	padding:10px;
+}
+</style>
+
+<script>
+	var i=0;
+	var j;
+	var flag=false;
+	
+	
+	function wonwon(){
+		str="";
+		if(i<9){
+			i++; //i=i+1;
+			str="dog000" + i;
+		}else if(i<68){
+			i++; //i=i+1;
+			str="dog00" + i ;
+		}else{
+			i=1;
+			str="dog000" + i ;
+		}
+		
+		document.getElementById('dog').src="images/" + str  + ".png";
+		document.getElementById('demo').innerHTML="第 " + i + " 張 : " + str ;
+		
+		}
+		
+		if(flag){
+			j=window.setInterval(wonwon,42);
+			
+		}
+		
+		function ssDog(){
+			if(!flag){				
+				j=window.setInterval(wonwon,42);
+				document.getElementById('btn').innerHTML="STOP";
+				flag=true;
+				}else
+				{
+				window.clearInterval(j);
+				document.getElementById('btn').innerHTML="PLAY";
+				flag=false;
+				}
+			}
+
+</script>
+
+
+</head>
+
+<body>
+<h1>using setInterval</h1>
+<button id="btn" onClick="ssDog();">PLAY</button><br><br>
+<img src="images/dog0001.png" id="dog"><br>
+<p id="demo"></p>
+</body>
+</html>

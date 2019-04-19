@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8>
+<title>無標題文件</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<style>
+
+</style>
+<script>
+$(document).ready(function(){
+	$('#btnLoad').click(function(){
+		$('#divLoad').load('salad.txt',function(rTxt,sTxt){						   
+			if (sTxt=="success") alert("讀取資料成功");
+			if (rTxt=="success") alert("讀取資料失敗");
+		//$('#divData').html(rTxt)	
+		$('#divData').text(rTxt)
+		});
+	});
+});
+</script>
+</head>
+
+<body>
+<div id="divLoad">按下Load按鈕載入salad.txt內容</div><br>
+<button id="btnLoad">Load</button>
+<div id="divData"></div>
+</body>
+</html>

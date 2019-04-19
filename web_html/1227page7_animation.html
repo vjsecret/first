@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8>
+<title>無標題文件</title>
+<script>
+	var pigA=["bound","dessert","fruit","green","salmon","tuna"];
+	var tmp=window.setInterval(showCurrentTime,42);
+	
+	var i=1;
+	var str='';
+	function showCurrentTime(){	
+			if (i<10){
+				str="0"+i;
+			}
+			else
+				str=i;
+
+			document.getElementById('demo').innerHTML="第"+i+"張圖片:dog00"+str+".png";
+			document.getElementById('imgShow').src="images/dog00"+str+".png";
+				
+			if (i<68)
+				i++;
+			else
+				i=1;
+	}
+</script>
+</head>
+
+<body>
+<p id="demo">salad is coming!!</p>
+<img id="imgShow" src="images/dog0001.png">
+</body>
+</html>

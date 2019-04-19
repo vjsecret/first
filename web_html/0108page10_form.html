@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8>
+<title>無標題文件</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<style>
+
+</style>
+<script>
+$(document).ready(function(){
+	$("#formTarget").submit(function(event){
+		window.alert("handler submit test");
+		event.preventDefault();
+		var txtGreeting=$("#txtGreeting").val();
+		$("#divSubmit").html(txtGreeting);
+	});
+	$("#divSubmit").click(function(){
+		$("#formTarget").submit();
+		var txtGreeting=$("#txtGreeting").val();
+		$(this).html("divSubmit元素向您問候:"+ txtGreeting);
+	});
+});
+</script>
+</head>
+
+<body>
+<form action="0108page11_form.html" id="formTarget">
+<input type="text" id="txtGreeting" placeholder="請輸入一句問 候語" name="id1"><br>
+<input type="submit" value="OK">
+</form>
+<hr>
+<div id="divSubmit" style="cursor:point; color:#F00">Call Submit()</div>
+</body>
+</html>

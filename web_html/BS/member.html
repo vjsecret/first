@@ -1,0 +1,338 @@
+﻿<!doctype html>
+<html lang="zh_TW">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <title>CRUD</title>
+	<style>
+        div{
+            float:left;
+            padding:10px;
+            margin:10px;
+            width:45%;
+        }
+        table{
+            background-color:#FCF;
+            border:#CCC 2px solid;            
+            border-radius:5px;
+        }
+        td{
+            padding:5px;
+        }
+        input{            
+            height:5vh;
+            border-radius:5px;
+        }
+        button{
+            background-color:#DDD;
+            border-radius:5px;
+            color:#333;
+            font-size:24px;
+            padding:5px;
+            margin:5px;
+        }
+        button:hover{
+            background-color:#999;
+            cursor:pointer;
+        }
+        [class*="col-"]{width:100.00%;
+        }
+    </style>
+  </head>
+  <body>
+    <!--<h1>Hello, world!</h1>-->
+    <div class="col-md-12">
+        <ul class="nav nav-tabs">
+          <li class="nav-item">
+            <a class="nav-link" href="myindex.html">Home<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item" id="liSignUp">
+            <a class="nav-link" href="login.html" >會員登入</a>
+          </li> 
+          <li class="nav-item" id="mana">
+            <a class="nav-link" href="#">商品管理</a>
+          </li>  
+          <li class="nav-item">
+            <a class="nav-link" href="car.html">購物車</a>
+          </li>                
+        </ul>
+    </div>
+    <main>
+        <div>
+            <table id="tblProduct">
+                <tr>
+                    <td>產品編號</td>
+                    <td>商品名稱</td>
+                    <td>價格</td>
+                    <td>特價</td>
+                    <td>獎勵點數一</td>
+                    <td>庫存量</td>
+                </tr>
+            </table>
+            <p id="pCount"></p>
+        </div>
+        <div class="col-md-12">
+            <table>
+                <tr>
+                    <td><input type="text" id="txtID" placeholder="Enter ID"></td>
+                    <td><button id="btnQuery">Query</button></td>
+                </tr>
+            </table>
+        </div>       
+        <div class="col-md-12">
+            <table>
+                <tr>
+                    <td><input type="text" id="txtName" placeholder="Enter Name"></td>
+               </tr>
+               <tr>
+                    <td><input type="text" id="txtPrice" placeholder="Enter Price"></td>
+                </tr>
+            </table>
+        </div>
+        <div>
+        <table>
+            <tr>
+                <td>        	
+                    <button id="btnAdd" >Save</button>
+                    <button id="btnUpdate">Update</button>
+                    <button id="btnDelete">Delete</button>
+                    <button id="btnReload" onClick="reloadPage()">Reload</button>            
+                </td>
+            </tr>
+        </table>
+        </div>
+    </main>
+
+
+
+<script src="https://www.gstatic.com/firebasejs/5.7.3/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBBpKMDQk2He3D3uPVrypr0namRTJes2pk",
+    authDomain: "first20190109.firebaseapp.com",
+    databaseURL: "https://first20190109.firebaseio.com",
+    projectId: "first20190109",
+    storageBucket: "first20190109.appspot.com",
+    messagingSenderId: "1026634990833"
+  };
+  firebase.initializeApp(config);
+	
+	const btnQuery=document.getElementById('btnQuery');
+	const btnAdd=document.getElementById('btnAdd');
+	const btnUpdate=document.getElementById('btnUpdate');
+	const btnDelete=document.getElementById('btnDelete');
+	const dbRefproduct = firebase.database().ref('users/');
+	const tblProduct=document.getElementById('tblProduct');
+	var trIndex=1; //記錄表格的索引值，初值為一
+
+	
+//~~~~~~~~~~~~~~~~~~~~~~號碼產生器
+	var num=0;
+	function userNoLen(num){
+		if (num<10)
+			return "00"+num;
+		else if (num<100)
+			return "0"+num;
+		else
+			return num;
+	}
+
+	console.log("test userNo number: "+ userNoLen(99));
+
+	function userNoGenerate(){
+		const dbRefUserNo=firebase.database().ref().child('no').child('userNo');
+		dbRefUserNo.on('value',snap=>{ 
+			console.log("最後一位使用者號碼為: "+snap.val());
+			num=snap.val()+1;
+			console.log("下一位使用者號碼為: "+num);
+			console.log("下一位使用者正式號碼為: "+ userNoLen(num));
+			//document.getElementById("txtID").value=userNoLen(num);
+		});
+	}
+	userNoGenerate();
+
+	function saveProduct(userId, name, price,userNo){
+		var txtID=document.getElementById('txtID');
+		var txtName=document.getElementById('txtName');
+		var txtPrice=document.getElementById('txtPrice');
+		//var id=firebase.database().ref().child('product').push().key;
+		var pdObj={
+				//id:txtID.value,
+				name:name,
+				price:price,
+			}
+		var updates={};
+		updates['/users/'+userId+'/data']=pdObj;
+		firebase.database().ref().update(updates,function(error){
+											  if (error)
+												alert("fail set data");
+											  else{
+													if (!window.confirm("修改資料成功!!\n按「確定」繼續修改!\n按「取消」新增資料")){
+															//document.getElementById('btnSet').disabled=true;
+															//document.getElementById('btnAdd').disabled=false;
+															txtName.value='';
+															txtPrice.value='';
+															userNoGenerate();
+														}
+													alert("success set data");
+												}
+											}//end func
+	
+		);
+		
+		firebase.database().ref('no/').set({
+			userNo:userNo
+		},function(error){	
+			  if (error)
+				alert("fail set no");
+			  else
+				alert("success set no")
+		});
+		
+		reloadPage();
+	}
+	btnAdd.addEventListener('click',function(){
+		var demo=document.getElementById('txtID').value;
+		var demo2=document.getElementById('txtName').value;
+		var demo3=document.getElementById('txtPrice').value;
+		//console.log("value:"+demo,demo2,demo3,num);
+		
+		saveProduct(demo,demo2,demo3,num);
+	});	
+
+	function delProduct(){
+		var txtID=document.getElementById('txtID');
+		var dbRefproductId = firebase.database().ref('users/'+txtID.value);
+		dbRefproductId.remove()
+		  .then(function() {
+			alert("Remove succeeded.")
+		  })
+		  .catch(function(error) {
+			alert("Remove failed: " + error.message)
+		  });
+
+		  reloadPage();
+	}
+	btnDelete.addEventListener('click',delProduct);
+
+	btnQuery.addEventListener('click',function(){
+		var txtID=document.getElementById('txtID');
+		var txtName=document.getElementById('txtName');
+		var txtPrice=document.getElementById('txtPrice');
+		var txtSPrice=document.getElementById('txtSPrice');
+		var txtReword1=document.getElementById('txtReword1');
+		var txtReword2=document.getElementById('txtReword2');
+		var dbRefproductId = firebase.database().ref('users/'+txtID.value);
+		dbRefproductId.on('value',snap=>{
+			console.log(snap.val());
+			if (snap.val()===null){
+				alert("無此產品編號");
+				txtID.value='';
+				txtName.value='';
+				txtPrice.value='';
+				txtSPrice.value='';
+				txtReword1="";
+				txtReword2="";
+			}else{
+				txtName.value=snap.val().data.name;
+				txtPrice.value=snap.val().data.price;
+				txtSPrice.value=snap.val().data.sprice;
+				txtReword1.value=snap.val().data.obj1;
+				txtReword2.value=snap.val().data.obj2;
+			}
+		});
+	});
+
+	function updateProduct(userId, name, price,userNo){
+		var txtID=document.getElementById('txtID');
+		var txtName=document.getElementById('txtName');
+		var txtPrice=document.getElementById('txtPrice');
+		//var id=firebase.database().ref().child('product').push().key;
+		var pdObj={
+				//id:txtID.value,
+				name:name,
+				price:price,
+			}
+		var updates={};
+		updates['/users/'+userId+'/data']=pdObj;
+		firebase.database().ref().update(updates,function(error){
+											  if (error)
+												alert("fail set data");
+											  else{
+													if (!window.confirm("修改資料成功!!\n按「確定」繼續修改!\n按「取消」新增資料")){
+															//document.getElementById('btnSet').disabled=true;
+															//document.getElementById('btnAdd').disabled=false;
+															txtName.value='';
+															txtPrice.value='';
+															userNoGenerate();
+														}
+													alert("success set data");
+												}
+											}//end func
+	
+		);
+		
+		firebase.database().ref('no/').set({
+			userNo:userNo
+		},function(error){	
+			  if (error)
+				alert("fail set no");
+			  else
+				alert("success set no")
+		});
+
+		reloadPage();
+	}
+	btnUpdate.addEventListener('click',function(){
+		var demo=document.getElementById('txtID').value;
+		var demo2=document.getElementById('txtName').value;
+		var demo3=document.getElementById('txtPrice').value;
+		//console.log("value:"+demo,demo2,demo3,num);
+		
+		updateProduct(demo,demo2,demo3,num);
+	});
+	
+	dbRefproduct.once('value',snap=>{snap.forEach(function(childSnap){				  		
+										var childKey=childSnap.key;
+										var childVal=childSnap.val();
+										
+										console.log(childKey);
+										console.log(childVal);
+
+										var r=tblProduct.insertRow(trIndex);
+
+										var childID=r.insertCell(0);
+										var childName=r.insertCell(1);
+										var childPrice=r.insertCell(2);
+										var childSPrice=r.insertCell(3);
+										var childObj1=r.insertCell(4);
+										var childObj2=r.insertCell(5);
+									
+										childID.appendChild(document.createTextNode(childKey));
+										childName.appendChild(document.createTextNode(childVal.data.name));
+										childPrice.appendChild(document.createTextNode(childVal.data.price));
+										childSPrice.appendChild(document.createTextNode(childVal.data.sprice));
+										childObj1.appendChild(document.createTextNode(childVal.data.obj1));
+										childObj2.appendChild(document.createTextNode(childVal.data.obj2));
+										trIndex=trIndex+1;
+									});//子項(迴圈項)
+					  			document.getElementById('pCount').innerHTML="目前共有 " + (trIndex-1) + "筆資料<br>";
+							});//父項
+function reloadPage(){
+	window.location.reload();
+}
+</script>
+
+
+  </body>
+</html>

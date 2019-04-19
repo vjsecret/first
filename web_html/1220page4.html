@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8>
+<title>無標題文件</title>
+</head>
+<style>
+	p{background-color:#FF3;
+		border:#39F solid 5px;
+		paddubg:10px;
+		width:30%;
+		}
+</style>
+<script>
+function score(){
+	var chi=0;
+	var math=0;
+	var eng=0;
+	var total=0;
+	var ave=0;
+	var result="";
+	
+	chi=document.getElementById('chi').value*1;
+	math=parseInt(document.getElementById('math').value*1,10);
+	eng=parseInt(document.getElementById('eng').value*1,10);
+
+	total=chi+math+eng;
+	ave=total/3;
+	var tmp=0;
+	var str='';	
+	
+	tmp=ave.toFixed(0);
+	if (tmp>=60){
+		str="恭喜您及格了"}
+	else if (tmp<60 && tmp>=50){
+		str="您尚可補考"}
+	else{
+		str="您被死當了"}
+
+	result="您的成績如下:"+ "<br>" +
+			"國文:"+ chi + "<br>" +
+			"英文:"+ eng + "<br>" +
+			"數學:"+ math + "<br>" +
+			"總分:"+ total + "<br>" +
+			"平均:"+ ave.toFixed(2)+ "<br>" + str;
+
+	//alert("總分:"+total+", 平均:"+ave.toFixed(2));
+	document.getElementById('result').innerHTML=result;			
+	};
+</script>
+
+<body>
+<h1 style="color:#090">成績管理系統</h1>
+<hr>
+
+<h3 style="color:#660">請輸入三科成績</h3>
+<input type="number" id="chi" placeholder="國文"><br>
+<input type="number" id="math" placeholder="數學"><br>
+<input type="number" id="eng" placeholder="英文"><br>
+<button onClick="score()">OK</button>
+
+<p id="result">成績顯示區</p>
+
+</body>
+</html>

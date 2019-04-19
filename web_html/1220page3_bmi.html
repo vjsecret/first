@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+<meta charset="utf-8">
+<title>無標題文件</title>
+</head>
+<script>
+	function bmi(){
+		var h=0, w=0,bmi=0;
+		var str='';
+		h=document.getElementById('txtHeight').value;
+		w=document.getElementById('txteight').value;		
+		var result = document.getElementById('divBmi');
+		
+		if (h!=0 && w!=0){
+			h=h/100;
+			bmi=w/(Math.pow(h,2));
+			
+			if (bmi<18.5){
+				str="過輕";
+			}
+			else if (bmi>=18.5 && bmi<24){
+				str="正常";
+			}
+			else if (bmi>=24 && bmi<27){
+				str="過重";
+			}
+			else if (bmi>=27 && bmi<30){
+				str="輕肥";
+			}
+			else if (bmi>=30 && bmi<35){
+				str="中肥";
+			}
+			else{
+				str="重肥";
+			}
+
+			result.innerHTML="身高:"+h*100+"公分<br>"+
+							 "體重:"+w+"公斤<br>"+
+							 "您的身體質量指數為:"+bmi.toFixed(1)+"<br>"+
+							 "警語:" + str +"<br>";
+
+			document.getElementById('txtHeight').value="";
+			document.getElementById('txteight').value="";
+		}
+		else{
+				result.innerHTML="請輸入您的身高和體重<br>";
+		}	
+	}
+	function standard(){
+		var f=0,m=0;
+		var h=0, w=0,sd=0;
+		var uptmp=0,downtmp=0;
+		var gender='';
+		var str='';
+		h=document.getElementById('txtHeight').value;
+		w=document.getElementById('txteight').value;
+		var standard = document.getElementById('divStandard');
+		
+		f=document.getElementById('f');
+		m=document.getElementById('m');
+		
+		if (h!=0 && w!=0){			
+			if (m.checked){
+				gender=m.value;
+				sd=(h-80)*0.7;
+			}else{
+				gender=f.value;
+				sd=(h-70)*0.6
+			}
+			
+			uptmp=sd*1.1;
+			downtmp=sd*0.9;
+			
+			if (w>uptmp){
+				str="您超重了，請多運動,少吃一點";
+			}
+			else if (w<downtmp){
+				str="您太輕了，請多吃點";
+			}
+			else{
+				str="您太標準了^_^";
+			}
+			standard.innerHTML="您的標準體重資訊: <br>" +
+			"身高:"+h+"公分<br>"+
+			"體重:"+w+"公斤<br>"+
+			"性別:"+gender+"生<br>"+
+			"標準體重:"+ uptmp.toFixed(1) + "~"+ downtmp.toFixed(1) +"公斤<br>"+			"體重上限是:"+uptmp.toFixed(1)+"公斤<br>"+
+			"體重下限是:"+downtmp.toFixed(1)+"公斤<br>"+
+			"給您的建議是:"+str;
+
+
+
+		}
+		else{
+			standard.innerHTML="請輸入您的身高和體重";
+			document.getElementById('txtHeight').value="";
+			document.getElementById('txteight').value="";
+			standard.innerHTML="";			
+		}
+
+		
+	}
+</script>
+<body>
+<h3>請輸入您的體位資料:</h3>
+<input type="number" id="txtHeight" placeholder="請輸入您的身高(公分)"><br>
+<input type="number" id="txteight" placeholder="請輸入您的體重(公斤)"><br>
+<input type="radio" name="gender" id="m" value="男" checked>男
+<input type="radio" name="gender" id="f" value="女">女<br>
+<button id="btmOK" onclick="bmi()">身體質量指標</button>
+<button id="btmStandard" onclick="standard()">標準體重</button>
+
+<div id="divBmi">
+<div id="divStandard">
+
+</div>	
+</body>
+</html>

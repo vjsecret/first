@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8>
+<title>無標題文件</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+	$("#txtCoffee").add("li").add("h3").css("color","royalblue");	   
+	$("#btnBefore").on('click',function(){
+			$("#demo ol").prepend("<li>"+$("#txtCoffee").val()+"</li>");	
+		});
+	$("#btnAfter").on('click',function(){
+			$("#demo ol").append("<li>"+$("#txtCoffee").val()+"</li>");	
+		});
+
+});
+</script>
+<style>
+
+</style>
+</head>
+
+<body>
+
+<input type="text" id="txtCoffee">請輸入您喜愛咖啡的品項
+<button id="btnBefore">加在前方</button>
+<button id="btnAfter">加在後方</button>
+<h3>我喜愛的咖啡品項</h3>
+<div id="demo">
+<ul>
+<ol>
+    <li>義式</li>
+    <li>拿鐵</li>
+</ol>
+</ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+	<head>
+    	<meta charset="utf-8">
+        <!--HTML註解-->
+    	<title>JS</title>
+		<script>
+			/*
+			多行註解
+			*/
+			
+			//單行註解
+            //alert("hello, JS");
+        </script>
+
+    </head>
+
+    <body>
+		<script>
+    		document.write("<h1>Well come to cake time</h1>");
+			document.write("<hr>");
+		</script>
+		<script>			
+			var chi=65;
+			var math=75;
+			var eng=80;
+			var total=0;
+
+			var name="大寫";
+			var hight= 55;
+			var gender= false;
+			
+			var stu={
+					firstName:"寫",
+					lastName:"大",
+					gender:"男"
+				};
+
+			document.write("姓名:" + name + "<br>");
+			document.write("身高:" + hight + "<br>");
+			document.write("性別:" + gender + "<br>");
+						   
+    		document.write("國文分數:"+ chi + "<br>");
+			document.write("數學分數:"+ math + "<br>");
+			document.write("英文分數:"+ eng + "<br>");
+
+			document.write("<hr>");
+			document.write( stu.lastName + stu.firstName + "個人資料:" + "<br>");
+			document.write("性別:" + stu.gender + "<br>");
+			
+			total=chi+math+eng;
+			ave=total/3;
+			document.write("總分:"+total + "<br>");
+			document.write("平均:"+ave.toFixed(2) + "<br>");
+			
+			if (gender == true)
+				document.write("性別:男<br>");
+			else
+				document.write("性別:女<br>");
+
+			name="";
+			stu=null;
+			document.write("<hr>");
+			document.write("姓名:" + name + "<br>");
+			//document.write( stu.lastName + stu.firstName + "個人資料:" + "<br>");
+			document.write("<hr>");
+			document.write("eng的資料型態是:"+ typeof(eng) + "<br>");
+		</script>
+    </body>
+</html>
