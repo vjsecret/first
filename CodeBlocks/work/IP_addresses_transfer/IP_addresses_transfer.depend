@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1462454223 source:e:\software\codeblocks\work\ip_addresses_transfer\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<winsock2.h>
+	<windows.h>
+	<fcntl.h>
+	<unistd.h>
+

@@ -1,0 +1,10 @@
+-r
+"I:\E2C_Motion_V1.1\thirdparty\TI\2812\Project_Lib\Debug\DSP281x_TI.lib"
+"I:\E2C_Motion_V1.1\thirdparty\TI\2812\Project_Lib\Debug\DSP281x_CpuTimers.obj"
+"I:\E2C_Motion_V1.1\thirdparty\TI\2812\Project_Lib\Debug\DSP281x_DefaultIsr.obj"
+"I:\E2C_Motion_V1.1\thirdparty\TI\2812\Project_Lib\Debug\DSP281x_GlobalVariableDefs.obj"
+"I:\E2C_Motion_V1.1\thirdparty\TI\2812\Project_Lib\Debug\DSP281x_PieCtrl.obj"
+"I:\E2C_Motion_V1.1\thirdparty\TI\2812\Project_Lib\Debug\DSP281x_PieVect.obj"
+"I:\E2C_Motion_V1.1\thirdparty\TI\2812\Project_Lib\Debug\DSP281x_SysCtrl.obj"
+"I:\E2C_Motion_V1.1\thirdparty\TI\2812\Project_Lib\Debug\DSP281x_Xintf.obj"
+"I:\E2C_Motion_V1.1\thirdparty\TI\2812\Project_Lib\Debug\Gpio_KEB.obj"

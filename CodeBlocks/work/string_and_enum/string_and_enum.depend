@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1458127044 source:e:\software\codeblocks\work\string_and_enum\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+

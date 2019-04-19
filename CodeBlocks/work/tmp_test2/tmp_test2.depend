@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1446101913 source:e:\software\codeblocks\work\tmp_test2\main.cpp
+	<iostream>
+	"app2.h"
+
+1446001728 e:\software\codeblocks\work\tmp_test2\app2.h
+
+1446101777 source:e:\software\codeblocks\work\tmp_test2\app2.cpp
+	<iostream>
+	"app2.h"
+

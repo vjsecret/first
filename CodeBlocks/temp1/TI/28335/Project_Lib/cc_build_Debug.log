@@ -1,0 +1,21 @@
+--------------------------  DSP2833x_TI.pjt - Debug  --------------------------
+[DSP2833x_CpuTimers.c] "C:\CCStudio_v3.3PLA\C2000\cgtools\bin\cl2000" -g -fr"I:/E2C_Motion_V1.1/thirdparty/TI/28335/Project_Lib/Debug" -i"../../DSP2833x_headers/include" -i"../../DSP2833x_common/include" -d"_DEBUG" -d"LARGE_MODEL" -ml -mt -v28 --float_support=fpu32 -@"../../Project_Lib/Debug.lkf" "DSP2833x_CpuTimers.c"
+
+[DSP2833x_DefaultIsr.c] "C:\CCStudio_v3.3PLA\C2000\cgtools\bin\cl2000" -g -fr"I:/E2C_Motion_V1.1/thirdparty/TI/28335/Project_Lib/Debug" -i"../../DSP2833x_headers/include" -i"../../DSP2833x_common/include" -d"_DEBUG" -d"LARGE_MODEL" -ml -mt -v28 --float_support=fpu32 -@"../../Project_Lib/Debug.lkf" "DSP2833x_DefaultIsr.c"
+
+[DSP2833x_PieCtrl.c] "C:\CCStudio_v3.3PLA\C2000\cgtools\bin\cl2000" -g -fr"I:/E2C_Motion_V1.1/thirdparty/TI/28335/Project_Lib/Debug" -i"../../DSP2833x_headers/include" -i"../../DSP2833x_common/include" -d"_DEBUG" -d"LARGE_MODEL" -ml -mt -v28 --float_support=fpu32 -@"../../Project_Lib/Debug.lkf" "DSP2833x_PieCtrl.c"
+
+[DSP2833x_PieVect.c] "C:\CCStudio_v3.3PLA\C2000\cgtools\bin\cl2000" -g -fr"I:/E2C_Motion_V1.1/thirdparty/TI/28335/Project_Lib/Debug" -i"../../DSP2833x_headers/include" -i"../../DSP2833x_common/include" -d"_DEBUG" -d"LARGE_MODEL" -ml -mt -v28 --float_support=fpu32 -@"../../Project_Lib/Debug.lkf" "DSP2833x_PieVect.c"
+
+[DSP2833x_SysCtrl.c] "C:\CCStudio_v3.3PLA\C2000\cgtools\bin\cl2000" -g -fr"I:/E2C_Motion_V1.1/thirdparty/TI/28335/Project_Lib/Debug" -i"../../DSP2833x_headers/include" -i"../../DSP2833x_common/include" -d"_DEBUG" -d"LARGE_MODEL" -ml -mt -v28 --float_support=fpu32 -@"../../Project_Lib/Debug.lkf" "DSP2833x_SysCtrl.c"
+
+[DSP2833x_Xintf.c] "C:\CCStudio_v3.3PLA\C2000\cgtools\bin\cl2000" -g -fr"I:/E2C_Motion_V1.1/thirdparty/TI/28335/Project_Lib/Debug" -i"../../DSP2833x_headers/include" -i"../../DSP2833x_common/include" -d"_DEBUG" -d"LARGE_MODEL" -ml -mt -v28 --float_support=fpu32 -@"../../Project_Lib/Debug.lkf" "DSP2833x_Xintf.c"
+
+[DSP2833x_GlobalVariableDefs.c] "C:\CCStudio_v3.3PLA\C2000\cgtools\bin\cl2000" -g -fr"I:/E2C_Motion_V1.1/thirdparty/TI/28335/Project_Lib/Debug" -i"../../DSP2833x_headers/include" -i"../../DSP2833x_common/include" -d"_DEBUG" -d"LARGE_MODEL" -ml -mt -v28 --float_support=fpu32 -@"../../Project_Lib/Debug.lkf" "DSP2833x_GlobalVariableDefs.c"
+
+[Archiving...] "C:\CCStudio_v3.3PLA\C2000\cgtools\bin\ar2000" @"Debug.lkf"
+  ==>  new archive 'I:\E2C_Motion_V1.1\thirdparty\TI\28335\Project_Lib\Debug\DSP2833x_TI.lib'
+  ==>  building archive 'I:\E2C_Motion_V1.1\thirdparty\TI\28335\Project_Lib\Debug\DSP2833x_TI.lib'
+
+Build Complete,
+  0 Errors, 0 Warnings, 0 Remarks.

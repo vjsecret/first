@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1423557880 source:d:\codeblocks\temptemp\main.cpp
+	<iostream>
+	<stdio.h>
+

@@ -1,0 +1,88 @@
+int getSortedNum(int, int);
+int numInChain(int, int);
+int chain[1000];
+int main(void)
+{
+    int num, size, idx;
+    int bigNum, smallNum;
+    while (1)
+    {
+        scanf("%d", &num);
+        if (num==0)
+            break;
+        printf("Original number was %d\n", num);
+        idx = 0;
+        do
+        {
+            bigNum = getSortedNum(num,1);
+            smallNum = getSortedNum(num,-1);
+            chain[idx] = bigNum - smallNum;
+            num = chain[idx];
+            printf("%d - %d = %d\n", bigNum, smallNum, chain[idx]);
+            idx++;
+        } while (!numInChain(chain[idx-1], idx-2));
+        printf("Chain length %d\n\n",idx);
+    }
+
+    return 0;
+}
+
+int getSortedNum(int num, int order)
+{
+    int digit[10]={0};
+    int i, j, temp, size=0;
+    
+    for (i=0; i<10; i++)
+    {
+        digit[i] = num%10;
+        num /= 10;
+    }
+    i = 9;
+    while (i>=0)
+    {
+        if (digit[i]!=0)
+        {
+            size = i+1;
+            break;
+        }
+        i--;
+    }
+    if (order == 1)
+    {
+        for (i=0;i<size-1;i++)
+            for (j=i; j<size; j++)
+                if (digit[i]<digit[j])
+                {
+                    temp = digit[i];
+                    digit[i] = digit[j];
+                    digit[j] = temp;
+                }
+    }
+    else if (order == -1)
+    {
+        for (i=0;i<size-1;i++)
+            for (j=i; j<size; j++)
+                if (digit[i]>digit[j])
+                {
+                    temp = digit[i];
+                    digit[i] = digit[j];
+                    digit[j] = temp;
+                }
+    }
+    temp = digit[0];
+    for (i=1;i<size;i++)
+    {
+        temp *= 10;
+        temp += digit[i];
+    }
+    return temp;
+}
+
+int numInChain(int newNum, int idx)
+{
+    int i;
+    for (i=0;i<=idx;i++)
+        if (newNum == chain[i])
+            return 1;
+    return 0;
+}

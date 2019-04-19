@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="temp1" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/temp1" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/temp1" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Unit filename="IQmathLib.h" />
+		<Unit filename="TI/28335/DSP2833x_common/include/DSP2833x_DefaultISR.h" />
+		<Unit filename="TI/28335/DSP2833x_common/include/DSP2833x_Dma_defines.h" />
+		<Unit filename="TI/28335/DSP2833x_common/include/DSP2833x_EPwm_defines.h" />
+		<Unit filename="TI/28335/DSP2833x_common/include/DSP2833x_Examples.h" />
+		<Unit filename="TI/28335/DSP2833x_common/include/DSP2833x_Examples.h.bak" />
+		<Unit filename="TI/28335/DSP2833x_common/include/DSP2833x_GlobalPrototypes.h" />
+		<Unit filename="TI/28335/DSP2833x_common/include/DSP2833x_I2c_defines.h" />
+		<Unit filename="TI/28335/DSP2833x_common/include/DSP2833x_SWPrioritizedIsrLevels.h" />
+		<Unit filename="TI/28335/DSP2833x_common/include/DSP28x_Project.h" />
+		<Unit filename="TI/28335/DSP2833x_common/include/SFO.h" />
+		<Unit filename="TI/28335/DSP2833x_common/include/SFO_V5.h" />
+		<Unit filename="TI/28335/DSP2833x_headers/include/DSP2833x_Adc.h" />
+		<Unit filename="TI/28335/DSP2833x_headers/include/DSP2833x_CpuTimers.h" />
+		<Unit filename="TI/28335/DSP2833x_headers/include/DSP2833x_DMA.h" />
+		<Unit filename="TI/28335/DSP2833x_headers/include/DSP2833x_DevEmu.h" />
+		<Unit filename="TI/28335/DSP2833x_headers/include/DSP2833x_Device.h" />
+		<Unit filename="TI/28335/DSP2833x_headers/include/DSP2833x_ECan.h" />
+		<Unit filename="TI/28335/DSP2833x_headers/include/DSP2833x_ECap.h" />
+		<Unit filename="TI/28335/DSP2833x_headers/include/DSP2833x_EPwm.h" />
+		<Unit filename="TI/28335/DSP2833x_headers/include/DSP2833x_EQep.h" />
+		<Unit filename="TI/28335/DSP2833x_headers/include/DSP2833x_Gpio.h" />
+		<Unit filename="TI/28335/DSP2833x_headers/include/DSP2833x_I2c.h" />
+		<Unit filename="TI/28335/DSP2833x_headers/include/DSP2833x_Mcbsp.h" />
+		<Unit filename="TI/28335/DSP2833x_headers/include/DSP2833x_PieCtrl.h" />
+		<Unit filename="TI/28335/DSP2833x_headers/include/DSP2833x_PieVect.h" />
+		<Unit filename="TI/28335/DSP2833x_headers/include/DSP2833x_Sci.h" />
+		<Unit filename="TI/28335/DSP2833x_headers/include/DSP2833x_Spi.h" />
+		<Unit filename="TI/28335/DSP2833x_headers/include/DSP2833x_SysCtrl.h" />
+		<Unit filename="TI/28335/DSP2833x_headers/include/DSP2833x_XIntrupt.h" />
+		<Unit filename="TI/28335/DSP2833x_headers/include/DSP2833x_Xintf.h" />
+		<Unit filename="TI/28335/DSP2833x_headers/include/IQmathLib.h" />
+		<Unit filename="TI/lib/IQmath.lib" />
+		<Unit filename="TI/lib/IQmath_fpu32.lib" />
+		<Unit filename="main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

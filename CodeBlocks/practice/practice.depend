@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1412665551 source:d:\codeblocks\practice\main.c
+	<stdio.h>
+	<stdlib.h>
+	"0912.h"
+	"IQmathLib.h"
+
+1410489535 d:\codeblocks\practice\0912.h
+	<stdio.h>
+	<stdlib.h>
+
+1395644299 d:\codeblocks\practice\iqmathlib.h
+	<math.h>
+	<stdlib.h>
+	<limits.h>
+

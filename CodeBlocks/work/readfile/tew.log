@@ -1,0 +1,42 @@
+Jan  1 00:05:47 smd: smd:error:347.688:collectApp:1552:httpd (pid 14864) exited due to uncaught signal number 11
+Jan  1 00:05:47 httpd: httpd:error:347.756:dalWan_getWanParameters_dev2:314:No matched Device.Routing.Router.{i}.IPv6Forwarding.{i}. to wan
+Jan  1 00:05:47 httpd: httpd:error:347.757:dalWan_getWanParameters_dev2:364:Device.IP.Interface.{i}.IPv4Address.{i}. to wan ip interface.
+Jan  1 00:05:47 httpd: httpd:error:347.758:dalNtwk_getSystemDns_dev2:154:Could not get any Device.DNS.Client.Server.{i}., ret=9804
+Jan  1 00:00:10 (none) user.err kernel: brcm-pci 12800000.pcie: could not get clock
+Jan  1 00:00:10 (none) user.err kernel: brcm-pci 12a00000.pcie: could not get clock
+Jan  1 00:00:10 (none) user.alert kernel: BBSI initialization...
+Jan  1 00:00:10 (none) user.err kernel: bcmunimac_probe: instance 0, 12c00000.unimac
+Jan  1 00:00:10 (none) user.err kernel: Missing skip_mbdma_init property!
+Jan  1 00:00:10 (none) user.err kernel: bcmunimac_probe: instance 1, 12c02000.unimac
+Jan  1 00:00:10 (none) user.err kernel: Missing mbdma_channel0_rx_macid property!
+Jan  1 00:00:10 (none) user.err kernel: Missing mbdma_channel0_tx_macid property!
+Jan  1 00:00:10 (none) user.err kernel: Missing mbdma_channel1_rx_macid property!
+Jan  1 00:00:10 (none) user.err kernel: Missing mbdma_channel1_tx_macid property!
+Jan  1 00:00:10 (none) user.err kernel: hub 1-0:1.0: over-current condition on port 1
+Jan  1 00:00:10 (none) user.err kernel: hub 2-0:1.0: over-current condition
+Jan  1 00:00:10 (none) user.err kernel: rpc_service_init: skipping inactive rpc_flash service
+Jan  1 00:00:10 (none) user.err kernel: rpc_service_init: skipping inactive rpc_nonvol service
+Jan  1 00:00:10 (none) user.err kernel: rpc_service_init: skipping inactive rpc_erouter_pm service
+Jan  1 00:00:10 (none) user.err kernel: rpc_service_init: skipping inactive rpc_bash service
+Jan  1 00:00:10 (none) user.err kernel: rpc_service_init: skipping inactive rpc_testu service
+Jan  1 00:00:10 (none) user.err kernel: rpc_probe sent handshake message
+Jan  1 00:00:10 (none) user.err kernel: rpc_probe sent handshake message
+Jan  1 00:00:10 (none) user.err kernel: rpc_probe sent handshake message
+Jan  1 00:00:12 (none) user.err kernel: No callback was provided when DQM 30 was registered!
+Jan  1 00:00:18 (none) daemon.err ssk: ssk:error:18.303:findWlanMacAddress:1314:fopen failure
+Jan  1 00:00:18 (none) daemon.err ssk: ssk:error:18.304:findWlanMacAddress:1314:fopen failure
+Jan  1 00:00:18 (none) daemon.err ssk: ssk:error:18.319:rut2Lan_setEthernetMacAddr:486:RG need provision first!
+Jan  1 00:00:18 (none) daemon.err ssk: ssk:error:18.375:rut2Lan_setEthernetMacAddr:486:RG need provision first!
+Jan  1 00:00:18 (none) daemon.err ssk: ssk:error:18.437:rut2Lan_setEthernetMacAddr:486:RG need provision first!
+Jan  1 00:00:18 (none) daemon.err ssk: ssk:error:18.470:rut2Lan_setEthernetMacAddr:486:RG need provision first!
+Jan  1 00:00:54 (none) daemon.err ieee1905: ieee1905:error:54.278:cmsUtl_macStrToNum:141:Invalid macNum/macStr 0x7ff94300/(nil)
+Jan  1 00:01:03 (none) daemon.emerg toad: Broadcom Traffic Ordering Agent -- starting on wl1 as daemon process...
+Jan  1 00:01:11 (none) user.err kernel: No callback was provided when DQM 30 was registered!
+Jan  1 00:01:15 (none) daemon.emerg toad: Broadcom Traffic Ordering Agent -- starting on wl1 as daemon process...
+Jan  1 00:03:37 (none) daemon.err httpd: httpd:error:217.617:dalWan_getWanParameters_dev2:314:No matched Device.Routing.Router.{i}.IPv6Forwa
+Jan  1 00:03:37 (none) daemon.err httpd: httpd:error:217.617:dalWan_getWanParameters_dev2:364:Device.IP.Interface.{i}.IPv4Address.{i}. to wa
+Jan  1 00:03:37 (none) daemon.err httpd: httpd:error:217.623:dalNtwk_getSystemDns_dev2:154:Could not get any Device.DNS.Client.Server.{i}.,
+Jan  1 00:03:37 (none) daemon.err httpd: httpd:error:217.753:handle_request:1108:>>> handle_request: auth_check() failed !
+Jan  1 00:03:48 (none) daemon.err httpd: httpd:error:228.191:dalWan_getWanParameters_dev2:314:No matched Device.Routing.Router.{i}.IPv6Forwa
+Jan  1 00:03:48 (none) daemon.err httpd: httpd:error:228.191:dalWan_getWanParameters_dev2:364:Device.IP.Interface.{i}.IPv4Address.{i}. to wa
+Jan  1 00:03:48 (none) daemon.err httpd: httpd:error:228.192:dalNtwk_getSystemDns_dev2:154:Could not get any Device.DNS.Client.Server.{i}.,

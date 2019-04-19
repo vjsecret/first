@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1446463537 source:e:\software\codeblocks\work\tmp3\main.cpp
+	<iostream>
+	"BcmNullMessageLog.cpp"
+
+1446535526 e:\software\codeblocks\work\tmp3\bcmnullmessagelog.cpp
+	<stdio.h>
+	"BcmNullMessageLog.h"
+
+1446535411 e:\software\codeblocks\work\tmp3\bcmnullmessagelog.h
+
+1446463397 source:e:\software\codeblocks\work\tmp3\bcmnullmessagelog.cpp
+	<stdio.h>
+	"BcmNullMessageLog.h"
+

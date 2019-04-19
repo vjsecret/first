@@ -1,0 +1,34 @@
+; Code Composer Project File, Version 2.0 (do not modify or remove this line)
+
+[Project Settings]
+ProjectDir="I:\E2C_Motion_V1.1\thirdparty\TI\28335\Project_Lib\"
+ProjectType=Library
+CPUFamily=TMS320C28XX
+Tool="Archiver"
+Tool="Compiler"
+Tool="CustomBuilder"
+Tool="DspBiosBuilder"
+Config="Debug"
+Config="Release"
+
+[Source Files]
+Source="..\DSP2833x_common\source\DSP2833x_CpuTimers.c"
+Source="..\DSP2833x_common\source\DSP2833x_DefaultIsr.c"
+Source="..\DSP2833x_common\source\DSP2833x_PieCtrl.c"
+Source="..\DSP2833x_common\source\DSP2833x_PieVect.c"
+Source="..\DSP2833x_common\source\DSP2833x_SysCtrl.c"
+Source="..\DSP2833x_common\source\DSP2833x_Xintf.c"
+Source="..\DSP2833x_headers\source\DSP2833x_GlobalVariableDefs.c"
+
+["Archiver" Settings: "Debug"]
+Options=-r -o".\Debug\DSP2833x_TI.lib"
+
+["Archiver" Settings: "Release"]
+Options=-r -o".\Release\Porject_Lib.lib"
+
+["Compiler" Settings: "Debug"]
+Options=-g -fr"$(Proj_dir)\Debug" -i"..\..\DSP2833x_headers\include" -i"..\..\DSP2833x_common\include" -d"_DEBUG" -d"LARGE_MODEL" -ml -mt -v28 --float_support=fpu32
+
+["Compiler" Settings: "Release"]
+Options=-o3 -fr"$(Proj_dir)\Release" -d"LARGE_MODEL" -ml -v28
+

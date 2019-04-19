@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1427363383 source:d:\codeblocks\sort_test\main.c
+	<stdlib.h>
+	<time.h>
+

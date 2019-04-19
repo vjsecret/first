@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1445839572 source:e:\software\codeblocks\work\tmp_test\main.cpp
+	<iostream>
+	"tmp_app1.h"
+
+1445840192 e:\software\codeblocks\work\tmp_test\tmp_app1.h
+

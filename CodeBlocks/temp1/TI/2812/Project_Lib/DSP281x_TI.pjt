@@ -1,0 +1,35 @@
+; Code Composer Project File, Version 2.0 (do not modify or remove this line)
+
+[Project Settings]
+ProjectDir="I:\E2C_Motion_V1.1\thirdparty\TI\2812\Project_Lib\"
+ProjectType=Library
+CPUFamily=TMS320C28XX
+Tool="Archiver"
+Tool="Compiler"
+Tool="CustomBuilder"
+Tool="DspBiosBuilder"
+Config="Debug"
+Config="Release"
+
+[Source Files]
+Source="..\DSP281x_common\source\DSP281x_CpuTimers.c"
+Source="..\DSP281x_common\source\DSP281x_DefaultIsr.c"
+Source="..\DSP281x_common\source\DSP281x_PieCtrl.c"
+Source="..\DSP281x_common\source\DSP281x_PieVect.c"
+Source="..\DSP281x_common\source\DSP281x_SysCtrl.c"
+Source="..\DSP281x_common\source\DSP281x_Xintf.c"
+Source="..\DSP281x_common\source\Gpio_KEB.c"
+Source="..\DSP281x_headers\source\DSP281x_GlobalVariableDefs.c"
+
+["Archiver" Settings: "Debug"]
+Options=-r -o".\Debug\DSP281x_TI.lib"
+
+["Archiver" Settings: "Release"]
+Options=-r -o".\Release\Porject_Lib.lib"
+
+["Compiler" Settings: "Debug"]
+Options=-g -fr"$(Proj_dir)\Debug" -i"..\..\DSP281x_headers\include" -i"..\..\DSP281x_common\include" -d"_DEBUG" -d"LARGE_MODEL" -d"D_DSP2812" -ml -mt -v28
+
+["Compiler" Settings: "Release"]
+Options=-o3 -fr"$(Proj_dir)\Release" -d"LARGE_MODEL" -ml -v28
+

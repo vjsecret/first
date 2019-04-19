@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1427452338 source:d:\codeblocks\temp_calculate\main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+
