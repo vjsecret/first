@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8>
+<title>test OOP</title>
+<script src="0109Company.js"></script>
+
+<script>
+	var e1=new Employee("001","提芬妮","資訊部",23100);
+	var e2=new Employee("002","發大財","財務部",32000);
+	document.write(e1.showInfo());
+	document.write(e2.showInfo());
+	
+	var p1=new Person();	
+	p1.setName("bill");
+	document.write("這個人的名字是:"+p1.getName()+"<br>");
+	
+	p1.setName("mark");
+	document.write("這個人的名字是:"+p1.getName()+"<br>");
+	document.write("<hr>")
+	var s1=new Sale("005","魏繩麼");
+	
+	document.write(myHome.desk());
+	document.write(myHome.chair("電腦"));
+	document.write("<hr>")
+	var mh=new myHome.Person();
+	mh.setName("kelly");
+	document.write(mh.getName()+"<br>");
+	
+</script>
+</head>
+
+<body>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8>
+<title>test Firebase</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script>
+
+</script>
+</head>
+
+<body>
+
+<script src="https://www.gstatic.com/firebasejs/5.7.2/firebase.js"></script>
+<script>
+	$(document).ready(function(){
+		$("#btnHide1").click(function(){
+			$("h1").hide(1000,test);
+		});
+		$("#btnHide2").click(function(){
+			$("h1").hide(1000);
+			alert("隱藏標題一");
+		});
+	});
+
+	function test(){
+		alert("隱藏標題一");
+	}
+</script>
+<h1>我的第一支網路應用程式</h1>
+<hr>
+<button id="btnHide1">Hide H1</button>
+<button id="btnHide2">Hide H2</button>
+</body>
+</html>

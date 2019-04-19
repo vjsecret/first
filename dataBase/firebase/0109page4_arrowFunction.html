@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8>
+<title>test Firebase</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script>
+
+</script>
+</head>
+
+<body>
+<script>
+	$(document).ready(function(){
+		//無回傳值
+		//傳統寫法
+		function sayHello(){
+				console.log("Hello, 大家好");
+			}
+		sayHello();
+		
+		var sayhi=()=>{console.log("Hi, 大家好");} //括號不可以省略
+		sayhi();
+		
+		//有回傳值
+		var sayafter=()=>"GOOD Afternoon"; //括號不可以省略
+		console.log(sayafter());
+		
+		var threeNum=(x,y,z)=>x+y+z; //括號不可以省略
+		console.log(threeNum(1,2,3));
+		
+		var oneNum=x=>x; //只有一個參數，括號可以省略
+		console.log(oneNum(1));
+});
+
+</script>
+<h1>我的第一支網路應用程式</h1>
+</body>
+</html>
