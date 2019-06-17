@@ -1,2 +1,2 @@
 # program practice
-my program practice before
+my practice program before
