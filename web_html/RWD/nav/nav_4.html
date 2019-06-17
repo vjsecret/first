@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+  <html lang="zh-tw">
+    <head>
+      <meta charset="utf-8">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> <!-- 引入google 的 CDN函數庫-->
+      <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js" > </script>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0,shrink-to-fit=no">     
+      <link href="CSS/basic.css" rel="stylesheet" type="text/css">
+      <link href="CSS/BS_CSS.css" rel="stylesheet" type="text/css">
+      <link href="CSS/index_CSS.css" rel="stylesheet" type="text/css">
+      <link href="https://fonts.googleapis.com/css?family=Noto+Serif+TC" rel="stylesheet">
+      <!--      <引入Bootstrap版型>-->
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity=  "sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+      
+
+    <title>Order system</title>      
+
+  </head>
+  
+  <body id='body'>
+  	<div id="head" class="col-12">
+      <div id="navbar">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <!--  企業CT-->
+          <a class="navbar-brand" href="#">logo</a>
+
+		<ul>
+			<li id='liSignout'><a href="#">會員登出</a></li>
+			<li id='liSignin'><a href="SignIn.html">會員登入</a></li>                
+			<li id='liSignup'><a href="Sign.html">註冊會員</a></li>
+			<li ><a href="checkOut.html"><img src="images/face3.jpg" /><span id="sp1" name="sp1"></span></a></li>
+			
+			<!--google搜尋-->
+			<li >
+			  <form class="form-inline my-2 my-lg-0" action="http://www.google.com/search" method="get">
+				<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"  name="q">
+				<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+			   </form>  
+			</li>
+		</ul>
+			
+		</nav>
+	</div>
+		
+  </div>
+<div class="col-12" id="divNavmember">
+	<nav class="navbar navbar-expand-lg navbar-light bg-light" >
+			<!--  三明治按鈕，用於控制導覽列收合器 "note:data-"為自定義屬性 -->
+			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mynavbar" aria-controls="mynavbar" aria-expanded="false" aria-label="Toggle navigation">
+			  <span class="navbar-toggler-icon"></span>
+			  </button> 
+			<!--  導覽列收合器，導覽列所在程式碼-->
+			  <div class="collapse navbar-collapse" id="mynavbar" >
+			  <!--一般超連結-->
+				<ul class="navbar-nav mr-auto">
+				  <li class="nav-item active">
+					<a class="nav-link" href="index.html">首頁 <span class="sr-only">(current)</span></a>
+				  </li>              
+				  <li class="nav-item">
+					<a class="nav-item nav-link" href="special.html" id="liMenu">特價專區</a>
+				  </li>
+				  <li class="nav-item">
+					<a class="nav-item nav-link" href="indexRice.html" id="liMenu">米飯類</a>
+				  </li>
+				  <li class="nav-item">
+					<a class="nav-item nav-link" href="noodles.html" id="liMenu">麵食類</a>
+				  </li>
+				</ul>  
+			  </div>
+	</nav>
+</div>
+    <div id="footer" class="col-12">版權資訊 翻拷必究</div>  
+
+	<script type="text/javascript" src="JS/index.js"></script>
+  </body>
+</html>

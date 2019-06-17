@@ -1,0 +1,87 @@
+@charset "utf-8";
+/* CSS Document */
+#body{
+	background-color: #f8f9fa;
+	font-family: 'Noto Serif TC', serif;	
+	}
+	
+#head ul{
+	list-style-type:none;
+	}
+	
+#head li{
+	float:right;
+	margin:5px;
+	padding:3px;
+	list-style-type:none;
+	text-align:center;
+	line-height: 2em;
+	}
+	
+#main{
+	background-color: #f8f9fa;	
+	}
+	
+#tblProduct{
+	width:100%;
+	text-align:center;		
+	}
+	
+/*#tblProduct img{
+	width:100%;
+	hight:300em;
+	text-align:center;		
+	}*/
+
+#sp1{
+/*    background-color: rgba(250,0,0,0.3);
+	border-radius: 100%;
+	border-color:#F00;*/
+	color:#F00;
+	}
+
+#divMenu ul li{
+    float: left;
+	list-style-type:none;
+	text-align:center;
+	padding:5px;
+	margin: 0 120px;
+	}
+
+#content{
+  float: left;
+  margin: 10px 5%;
+  padding-bottom: 33.98%;
+  width: 48%;
+  height: 0;
+	}
+
+#main{
+	float: center;
+	margin: 10px 5%;
+	width: 100%;
+	}
+
+#footer{
+	clear:both;
+	background-color:#999;
+	color:#FFF;
+	font-size:12px;
+	bottom:0px;
+	left:0px;
+	width:100%;
+	text-align:center;	
+	}
+
+/*隱藏功能*/
+#liSignout {
+	display:none;
+	}
+	
+/*全育宣告*/
+/*垂直至中*/
+
+
+
+
+

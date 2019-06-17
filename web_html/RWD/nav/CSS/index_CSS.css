@@ -1,0 +1,87 @@
+@charset "utf-8";
+/* CSS Document */
+#body{
+	background-color: #f8f9fa;	
+	font-family: 'Noto Serif TC', serif;
+	}
+
+#head ul{
+	list-style-type:none;
+	}
+
+#head li{
+	float:right;
+	margin:5px;
+	padding:3px;
+	list-style-type:none;
+	text-align:center;
+	line-height: 2em;
+	}
+
+#divMenu ul li{
+    float: left;
+	list-style-type:none;
+	text-align:center;
+	padding:5px;
+	margin: 0 120px;
+	}
+	
+#main{
+	background-color: #f8f9fa;	
+	}
+
+#sp1{
+	color:#F00;
+	}
+
+#content{
+  float: left;
+  margin: 10px 5%;
+  padding-bottom: 33.98%;
+  width: 48%;
+  height: 0;
+	}
+
+#footer{
+/*	margin:10px 0px;*/
+	clear:both;
+	background-color:#999;
+	color:#FFF;
+	font-size:12px;
+	bottom:0px;
+	left:0px;
+	width:100%;
+	text-align:center;	
+	}
+
+/*隱藏功能*/
+#liSignout {
+	display:none;
+	}
+	
+/*全育宣告*/
+
+	
+.carousel-inner{
+	height:600px;
+	}
+
+
+/*垂直至中*/
+
+
+/*.flex-container {
+  display: flex;
+  flex-wrap: nowrap;
+  background-color: DodgerBlue;
+}
+.flex-container > div {
+  width: 100px;
+  margin: 10px;
+  height: 550px;
+  text-align: center;
+  line-height: 100px;
+  font-size: 30px;
+}*/
+
+

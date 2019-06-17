@@ -1,0 +1,19 @@
+@charset "utf-8";
+/* CSS Document */
+.body{
+	float:right;
+	width:16.33%;
+	}
+#main img {
+	width:320px;
+	height:200px	
+ }
+
+#footer li{
+	float:left;
+	height:20px;
+	display:inline-block;
+	margin:5px 0px;
+	padding:3px 0px;
+	
+	}
